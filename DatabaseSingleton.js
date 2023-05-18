@@ -6,7 +6,7 @@ class Database {
             Database.instance = this;
         }
         return Database.instance;
-    };
+    }
 
     checkTicket = (ticket) => {
         const found = this.tickets.find((t) => t.id === ticket);
@@ -20,6 +20,14 @@ class Database {
         } else {
             return false;
         }
+    };
+
+    addPeopleOnSite = () => {
+        this.peopleOnSite++;
+    };
+
+    removePeopleOnSite = () => {
+        this.peopleOnSite--;
     };
 }
 
