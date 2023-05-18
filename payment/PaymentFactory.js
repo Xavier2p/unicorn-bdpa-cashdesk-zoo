@@ -1,7 +1,5 @@
 class PaymentFactory {
-    constructor() {
-        this.price = 0;
-    }
+    constructor() { this.price = 0 }
 
     createPayment = (paymentType, price, reduction) => {
         this.price = price;

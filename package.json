@@ -5,8 +5,8 @@
   "main": "Zoo.js",
   "scripts": {
     "test": "jest",
-    "dev": "nodemon app.js",
-    "start": "node app.js"
+    "dev": "nodemon Zoo.js",
+    "start": "node Zoo.js"
   },
   "repository": {
     "type": "git",

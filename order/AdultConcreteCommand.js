@@ -4,12 +4,12 @@ class AdultConcreteCommand {
         this.quantity = quantity;
     }
 
-    execute(orders) {
+    execute = (orders) => {
         if (!orders.adults) orders.adults = 0;
         orders.adults += this.quantity;
     }
 
-    undo(orders) {
+    undo = (orders) => {
         if (!orders.adults) return orders.adults = 0;
         orders.adults -= this.quantity;
     }

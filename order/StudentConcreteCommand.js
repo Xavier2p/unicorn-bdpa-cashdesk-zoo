@@ -4,19 +4,17 @@ class StudentConcreteCommand {
         this.quantity = quantity;
     }
 
-    execute(orders) {
+    execute = (orders) => {
         if (!orders.students) orders.students = 0;
         orders.students += this.quantity;
     }
 
-    undo(orders) {
+    undo = (orders) => {
         if (!orders.students) return orders.students = 0;
         orders.students -= this.quantity;
     }
 
-    get Price() {
-        return this.price * this.quantity;
-    }
+    get Price() { return this.price * this.quantity }
 }
 
 module.exports = { StudentConcreteCommand };
