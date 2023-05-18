@@ -1,15 +1,30 @@
-const { Ticket } = require('./ticket/Ticket');
-const { Turnstile } = require('./turnstile/Turnstile');
+const { Shop } = require('./Shop');
 
-const turnstile = new Turnstile();
+class Zoo {
+    constructor() {
+        this.turnstiles = [];
+        this.desks = [new Shop()];
+        this.website = new Shop(false);
+    }
 
-const ticketOne = new Ticket('adult', 1);
-const ticketTwo = new Ticket('child', 2);
+    getTurnstiles(index) {
+        return this.turnstiles[index];
+    }
 
-ticketOne.save();
-ticketTwo.save();
+    getEnterTurnstiles(index) {
+        if (!index) index = 0;
+        return this.turnstiles.find((turnstile) => !turnstile.isOut);
+    }
 
-console.log(turnstile.checkTicket(ticketOne.id));
-console.log(turnstile.checkTicket(123));
+    getExitTurnstiles(index) {
+        if (!index) index = 0;
+        return this.turnstiles.find((turnstile) => turnstile.isOut);
+    }
 
-console.log(turnstile);
+    getDesk(index) {
+        if (!index) index = 0;
+        return this.desks[index];
+    }
+}
+
+const zoo = new Zoo();
