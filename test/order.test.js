@@ -82,14 +82,14 @@ test('redo', () => {
     commandOrder.redo();
     expect(commandOrder.history.length).toBe(2);
     expect(commandOrder.Price).toBe(s.Price + a.Price);
-    expect(commandOrder.order.students).toBe(1);
-    expect(commandOrder.order.adults).toBe(2);
+    expect(commandOrder.order.student).toBe(1);
+    expect(commandOrder.order.adult).toBe(2);
     expect(commandOrder.order.child).toBe(0);
     commandOrder.redo();
     expect(commandOrder.history.length).toBe(3);
     expect(commandOrder.Price).toBe(s.Price + a.Price + c.Price);
-    expect(commandOrder.order.students).toBe(1);
-    expect(commandOrder.order.adults).toBe(2);
+    expect(commandOrder.order.student).toBe(1);
+    expect(commandOrder.order.adult).toBe(2);
     expect(commandOrder.order.child).toBe(3);
     commandOrder.redo();
     commandOrder.redo();
