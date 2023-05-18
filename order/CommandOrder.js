@@ -1,6 +1,7 @@
 class CommandOrder {
     constructor() {
         this.history = [];
+        this.stack = [];
         this.order = {};
         this.price = 0;
     }
@@ -16,6 +17,15 @@ class CommandOrder {
         if (!command) return;
         this.price -= command.Price;
         command.undo(this.order);
+        this.stack.push(command);
+    }
+
+    redo = () => {
+        const command = this.stack.pop();
+        if (!command) return;
+        this.price += command.Price;
+        command.execute(this.order);
+        this.history.push(command);
     }
 
     get Price() {

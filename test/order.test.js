@@ -68,3 +68,29 @@ test('history', () => {
     commandOrder.undo();
     commandOrder.undo();
 });
+
+test('redo', () => {
+    const commandOrder = new CommandOrder();
+    const s = new StudentConcreteCommand(1);
+    const a = new AdultConcreteCommand(2);
+    const c = new ChildConcreteCommand(3);
+    commandOrder.execute(s);
+    commandOrder.execute(a);
+    commandOrder.execute(c);
+    commandOrder.undo();
+    commandOrder.undo();
+    commandOrder.redo();
+    expect(commandOrder.history.length).toBe(2);
+    expect(commandOrder.Price).toBe(s.Price + a.Price);
+    expect(commandOrder.order.students).toBe(1);
+    expect(commandOrder.order.adults).toBe(2);
+    expect(commandOrder.order.child).toBe(0);
+    commandOrder.redo();
+    expect(commandOrder.history.length).toBe(3);
+    expect(commandOrder.Price).toBe(s.Price + a.Price + c.Price);
+    expect(commandOrder.order.students).toBe(1);
+    expect(commandOrder.order.adults).toBe(2);
+    expect(commandOrder.order.child).toBe(3);
+    commandOrder.redo();
+    commandOrder.redo();
+});

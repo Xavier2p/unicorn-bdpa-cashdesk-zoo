@@ -15,8 +15,7 @@ class Shop {
     setPaymentType = (type) => {
         if (this.orderCommand.history.length <= 0) return 'No command registered';
         if (!type) {
-            console.log('Please precise paying method (BTC, Card, Cash)');
-            return;
+            return 'Please precise paying method (BTC, Card, Cash)';
         }
 
         this.paymentBuild = new PaymentFactory(PaymentType[type]);
