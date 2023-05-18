@@ -1,6 +1,6 @@
 class BTCPaymentBuilder {
     constructor() {
-        this.address = "";
+        this.address = '';
     }
 
     setAddress(address) {
@@ -9,8 +9,8 @@ class BTCPaymentBuilder {
     }
 
     pay() {
-        return this;
+        return true;
     }
 }
 
-module.exports = {BTCPaymentBuilder}
+module.exports = { BTCPaymentBuilder };

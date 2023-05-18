@@ -1,11 +1,11 @@
 class CashPaymentBuilder {
-    constructor(isOnDesk=true) {
+    constructor(isOnDesk = true) {
         this.isOnDesk = isOnDesk;
     }
 
     pay() {
-        return this;
+        return true;
     }
 }
 
-module.exports = {CashPaymentBuilder}
+module.exports = { CashPaymentBuilder };
