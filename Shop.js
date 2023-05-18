@@ -31,10 +31,16 @@ class Shop {
     };
 
     getTickets = () => {
-        if (this.isDesk) {
-            this.getTickets().buildTickets();
+        if (this.paymentDone) {
+            if (this.isDesk) {
+                this.getTickets(this.orderCommand.order).buildTickets();
+            } else {
+                this.getTickets(this.orderCommand.order).buildOnlineTickets();
+            }
+            this.CommandOrder = new CommandOrder();
+            this.reduction = new NullReduction();
         } else {
-            this.getTickets().buildOnlineTickets();
+            console.log('Payment not done');
         }
     };
 

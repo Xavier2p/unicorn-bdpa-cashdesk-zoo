@@ -5,13 +5,13 @@ class StudentConcreteCommand {
     }
 
     execute = (orders) => {
-        if (!orders.students) orders.students = 0;
-        orders.students += this.quantity;
+        if (!orders.student) orders.student = 0;
+        orders.student += this.quantity;
     }
 
     undo = (orders) => {
-        if (!orders.students) return orders.students = 0;
-        orders.students -= this.quantity;
+        if (!orders.student) return orders.student = 0;
+        orders.student -= this.quantity;
     }
 
     get Price() { return this.price * this.quantity }

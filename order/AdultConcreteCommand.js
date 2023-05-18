@@ -5,13 +5,13 @@ class AdultConcreteCommand {
     }
 
     execute = (orders) => {
-        if (!orders.adults) orders.adults = 0;
-        orders.adults += this.quantity;
+        if (!orders.adult) orders.adult = 0;
+        orders.adult += this.quantity;
     }
 
     undo = (orders) => {
-        if (!orders.adults) return orders.adults = 0;
-        orders.adults -= this.quantity;
+        if (!orders.adult) return orders.adult = 0;
+        orders.adult -= this.quantity;
     }
 
     get Price() {
