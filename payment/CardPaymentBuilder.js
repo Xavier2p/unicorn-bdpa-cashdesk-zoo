@@ -16,12 +16,12 @@ class CardPaymentBuilder {
         return this;
     }
 
-    setCcv(expiration) {
+    setExpiration(expiration) {
         this.expiration = expiration;
         return this;
     }
 
-    setCcv(beneficiary) {
+    setBeneficiary(beneficiary) {
         this.beneficiary = beneficiary;
         return this;
     }
@@ -30,3 +30,5 @@ class CardPaymentBuilder {
         return this;
     }
 }
+
+module.exports = {CardPaymentBuilder}

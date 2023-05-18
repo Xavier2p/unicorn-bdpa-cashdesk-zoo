@@ -1,6 +1,6 @@
 class CashPaymentBuilder {
-    constructor() {
-        this.isOnDesk = true;
+    constructor(isOnDesk=true) {
+        this.isOnDesk = isOnDesk;
     }
 
     pay() {
