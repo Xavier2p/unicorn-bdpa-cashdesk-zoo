@@ -1,4 +1,4 @@
-const { database } = require('../DatabaseSingleton');
+// const { database } = require('../DatabaseSingleton');
 
 class Ticket {
     constructor(type, id) {
@@ -13,4 +13,4 @@ class Ticket {
     notify = () => { console.log(`Ticket ${this.id} is ${this.isUsed ? 'used' : 'not used'}`) }
 }
 
-module.exports = { Ticket };
+// module.exports = { Ticket };

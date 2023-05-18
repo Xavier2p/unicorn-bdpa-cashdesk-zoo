@@ -33,4 +33,4 @@ class Database {
 
 const instance = new Database();
 Object.freeze(instance);
-module.exports = { database: instance };
+// module.exports = { database: instance };

@@ -1,4 +1,4 @@
-const { database } = require('../DatabaseSingleton');
+// const { database } = require('../DatabaseSingleton');
 
 class Turnstile {
     constructor(isOut = false) {
@@ -35,4 +35,4 @@ class Turnstile {
     }
 }
 
-module.exports = { Turnstile };
+// module.exports = { Turnstile };

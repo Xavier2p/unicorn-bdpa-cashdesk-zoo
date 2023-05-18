@@ -19,4 +19,4 @@ class AdultConcreteCommand {
     }
 }
 
-module.exports = { AdultConcreteCommand };
+// module.exports = { AdultConcreteCommand };

@@ -1,6 +1,6 @@
-const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory } = require('./payment/PaymentFactory');
-const { NullReduction, Reduction } = require('./payment/Reduction');
+// const { CommandOrder } = require('./order/CommandOrder');
+// const { PaymentFactory } = require('./payment/PaymentFactory');
+// const { NullReduction, Reduction } = require('./payment/Reduction');
 
 class Shop {
     constructor(desk = true) {
@@ -37,4 +37,4 @@ class Shop {
     createReduction = (reduction) => { this.reduction = new Reduction(reduction) }
 }
 
-module.exports = { Shop };
+// module.exports = { Shop };

@@ -1,6 +1,6 @@
-const { database } = require('./DatabaseSingleton');
-const { Shop } = require('./Shop');
-const { Turnstile } = require('./turnstile/Turnstile');
+// const { database } = require('./DatabaseSingleton');
+// const { Shop } = require('./Shop');
+// const { Turnstile } = require('./turnstile/Turnstile');
 
 class Zoo {
     constructor() {
@@ -44,5 +44,3 @@ class Zoo {
         }
     }
 }
-
-const zoo = new Zoo();

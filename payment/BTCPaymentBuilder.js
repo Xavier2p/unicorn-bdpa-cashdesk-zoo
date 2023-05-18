@@ -13,4 +13,4 @@ class BTCPaymentBuilder {
     }
 }
 
-module.exports = { BTCPaymentBuilder };
+// module.exports = { BTCPaymentBuilder };

@@ -18,4 +18,4 @@ class PaymentFactory {
     }
 }
 
-module.exports = { PaymentFactory };
+// module.exports = { PaymentFactory };

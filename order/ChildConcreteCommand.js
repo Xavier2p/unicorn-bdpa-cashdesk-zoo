@@ -19,4 +19,4 @@ class ChildConcreteCommand {
     }
 }
 
-module.exports = { ChildConcreteCommand };
+// module.exports = { ChildConcreteCommand };

@@ -23,4 +23,4 @@ class CommandOrder {
     }
 }
 
-module.exports = { CommandOrder };
+// module.exports = { CommandOrder };

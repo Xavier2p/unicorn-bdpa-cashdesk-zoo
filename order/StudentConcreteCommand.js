@@ -19,4 +19,4 @@ class StudentConcreteCommand {
     }
 }
 
-module.exports = { StudentConcreteCommand };
+// module.exports = { StudentConcreteCommand };
