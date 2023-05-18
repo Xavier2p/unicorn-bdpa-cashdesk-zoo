@@ -6,29 +6,34 @@ class CardPaymentBuilder {
         this.beneficiary = '';
     }
 
-    setId(id) {
+    setId = (id) => {
         this.id = id;
         return this;
     }
 
-    setCcv(ccv) {
+    setCcv = (ccv) => {
         this.ccv = ccv;
         return this;
     }
 
-    setExpiration(expiration) {
+    setExpiration = (expiration) => {
         this.expiration = expiration;
         return this;
     }
 
-    setBeneficiary(beneficiary) {
+    setBeneficiary = (beneficiary) => {
         this.beneficiary = beneficiary;
         return this;
     }
 
-    pay() {
-        return this.id !== 0 && this.ccv !== 0 && this.expiration !== "" && 
-        this.beneficiary !== "" ? true : new Error("Missing payment details");
+    pay = (price) => {
+        const okForPayment = this.id !== 0 && this.ccv !== 0 && this.expiration !== "" && this.beneficiary !== "";
+        if (!okForPayment) {
+            console.error("Missing payment details");
+        } else {
+            console.log(`Paying ${price}€ with card `);
+        }
+        return okForPayment;
     }
 }
 

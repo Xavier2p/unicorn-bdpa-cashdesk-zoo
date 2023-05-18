@@ -8,6 +8,10 @@ class Database {
         return Database.instance;
     }
 
+    reset() {
+        Database.instance.tickets.length = 0;
+    }
+
     checkTicket = (ticket) => {
         const found = this.tickets.find((t) => t.id === ticket);
         if (found) {

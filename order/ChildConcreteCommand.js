@@ -4,12 +4,12 @@ class ChildConcreteCommand {
         this.quantity = quantity;
     }
 
-    execute(orders) {
+    execute = (orders) => {
         if (!orders.child) orders.child = 0;
         orders.child += this.quantity;
     }
 
-    undo(orders) {
+    undo = (orders) => {
         if (!orders.child) return orders.child = 0;
         orders.child -= this.quantity;
     }
