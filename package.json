@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/iot-unicorn/cash-desk-zoo/issues"
   },
-  "homepage": "https://github.com/iot-unicorn/cash-desk-zoo#readme"
+  "homepage": "https://github.com/iot-unicorn/cash-desk-zoo#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  },
+  "jest": {
+    "testMatch": ["<rootDir>/test//**/*-test.[jt]s"]
+  }
 }
