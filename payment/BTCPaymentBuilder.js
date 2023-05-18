@@ -9,7 +9,7 @@ class BTCPaymentBuilder {
     }
 
     pay() {
-        return true;
+        return this.address !== "" ? true : new Error("Missing payment details");
     }
 }
 

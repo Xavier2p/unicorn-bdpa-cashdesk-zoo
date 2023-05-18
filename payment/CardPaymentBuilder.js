@@ -27,7 +27,8 @@ class CardPaymentBuilder {
     }
 
     pay() {
-        return true;
+        return this.id !== 0 && this.ccv !== 0 && this.expiration !== "" && 
+        this.beneficiary !== "" ? true : new Error("Missing payment details");
     }
 }
 
