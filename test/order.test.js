@@ -1,7 +1,7 @@
-const { CommandOrder } = require('../../order/CommandOrder');
-const { AdultConcreteCommand } = require('../../order/AdultConcreteCommand');
-const { StudentConcreteCommand } = require('../../order/StudentConcreteCommand');
-const { ChildConcreteCommand } = require('../../order/ChildConcreteCommand');
+const { CommandOrder } = require('../order/CommandOrder');
+const { AdultConcreteCommand } = require('../order/AdultConcreteCommand');
+const { StudentConcreteCommand } = require('../order/StudentConcreteCommand');
+const { ChildConcreteCommand } = require('../order/ChildConcreteCommand');
 
 test('adultOrder', () => {
     const commandOrder = new CommandOrder();

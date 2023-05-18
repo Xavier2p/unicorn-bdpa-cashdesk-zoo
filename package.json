@@ -24,7 +24,7 @@
   "jest": {
     "testEnvironment": "node",
     "testMatch": [
-      "<rootDir>/test//**/*-test.[jt]s"
+      "<rootDir>/test//**/*[-.]test.[jt]s"
     ]
   }
 }
