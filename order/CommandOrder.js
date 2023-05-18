@@ -17,6 +17,7 @@ class CommandOrder {
         if (!command) return;
         this.price -= command.Price;
         command.undo(this.order);
+        this.stack.push(command);
     }
 
     redo = () => {
