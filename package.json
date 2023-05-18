@@ -2,7 +2,7 @@
   "name": "cash-desk-zoo",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "Zoo.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
@@ -22,6 +22,8 @@
     "jest": "^29.5.0"
   },
   "jest": {
-    "testMatch": ["<rootDir>/test//**/*-test.[jt]s"]
+    "testMatch": [
+      "<rootDir>/test//**/*-test.[jt]s"
+    ]
   }
 }
