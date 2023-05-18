@@ -1,3 +1,3 @@
-# BDPA, on est pas des PD
+# BDPA, on est des PD
 
 (sauf arthur)
