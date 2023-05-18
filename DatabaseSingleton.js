@@ -7,8 +7,22 @@ class Database {
         }
         return Database.instance;
     };
+
+    checkTicket = (ticket) => {
+        const found = this.tickets.find((t) => t.id === ticket);
+        if (found) {
+            if (found.isUsed) {
+                return false;
+            } else {
+                found.useTicket();
+                return true;
+            }
+        } else {
+            return false;
+        }
+    };
 }
 
 const instance = new Database();
 Object.freeze(instance);
-export default instance;
+module.exports = { database: instance };

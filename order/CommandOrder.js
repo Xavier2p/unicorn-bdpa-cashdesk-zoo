@@ -6,13 +6,21 @@ class CommandOrder {
     }
 
     execute(command) {
-        this.price = command.getPrice();
+        command.execute(this.order);
+        this.price += command.Price;
+        this.history.push(command);
     }
 
     undo() {
         const command = this.history.pop();
-        command.undo();
+        if (!command) return;
+        this.price -= command.Price;
+        command.undo(this.order);
+    }
+
+    get Price() {
+        return this.price;
     }
 }
 
-module.exports = {CommandOrder}
+module.exports = { CommandOrder };

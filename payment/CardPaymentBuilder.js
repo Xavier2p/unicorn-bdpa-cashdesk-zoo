@@ -2,8 +2,8 @@ class CardPaymentBuilder {
     constructor() {
         this.id = 0;
         this.ccv = 0;
-        this.expiration = "";
-        this.beneficiary = "";
+        this.expiration = '';
+        this.beneficiary = '';
     }
 
     setId(id) {
@@ -32,4 +32,4 @@ class CardPaymentBuilder {
     }
 }
 
-module.exports = {CardPaymentBuilder}
+module.exports = { CardPaymentBuilder };
