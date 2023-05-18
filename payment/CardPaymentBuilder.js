@@ -26,9 +26,14 @@ class CardPaymentBuilder {
         return this;
     }
 
-    pay = () => {
-        return this.id !== 0 && this.ccv !== 0 && this.expiration !== "" &&
-            this.beneficiary !== "" ? true : new Error("Missing payment details");
+    pay = (price) => {
+        const okForPayment = this.id !== 0 && this.ccv !== 0 && this.expiration !== "" && this.beneficiary !== "";
+        if (!okForPayment) {
+            console.error("Missing payment details");
+        } else {
+            console.log(`Paying ${price}€ with card `);
+        }
+        return okForPayment;
     }
 }
 

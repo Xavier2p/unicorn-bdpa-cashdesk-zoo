@@ -9,9 +9,7 @@ class Zoo {
         this.website = new Shop(false);
     }
 
-    getTurnstiles(index) {
-        return this.turnstiles[index];
-    }
+    getTurnstiles = (index) => this.turnstiles[index];
 
     getEnterTurnstiles(index) {
         if (!index) index = 0;
@@ -28,18 +26,14 @@ class Zoo {
         return this.desks[index];
     }
 
-    addTurnstile(type) {
+    addTurnstile = (type) => {
         if (type === 'enter') {
             const t = new Turnstile(false);
-            t.subscribe(() => {
-                database.addPeopleOnSite();
-            });
+            t.subscribe(() => { database.addPeopleOnSite() });
             this.turnstiles.push(t);
         } else if (type === 'exit') {
             const t = new Turnstile(true);
-            t.subscribe(() => {
-                database.removePeopleOnSite();
-            });
+            t.subscribe(() => { database.removePeopleOnSite() });
             this.turnstiles.push(t);
         }
     }
