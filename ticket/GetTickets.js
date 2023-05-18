@@ -1,4 +1,4 @@
-const { Ticket } = require('./Ticket');
+// const { Ticket } = require('./Ticket');
 
 class GetTickets {
     constructor(order) {
@@ -37,4 +37,4 @@ function makeid(length) {
     return result;
 }
 
-module.exports = { GetTickets };
+// module.exports = { GetTickets };

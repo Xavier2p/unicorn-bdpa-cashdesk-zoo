@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 // const { CommandOrder } = require('./order/CommandOrder');
 // const { PaymentFactory } = require('./payment/PaymentFactory');
 // const { NullReduction, Reduction } = require('./payment/Reduction');
-=======
-const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory, PaymentType } = require('./payment/PaymentFactory');
-const { NullReduction, Reduction } = require('./payment/Reduction');
->>>>>>> 23714a6cb3829c4d726aa19578cd5c59fbee8ad1
 
 class Shop {
     constructor(desk = true) {
@@ -31,16 +25,16 @@ class Shop {
         if (!this.paymentBuild) return 'No payment type selected';
         if (this.paymentDone) return 'Payment already done';
 
-        const price = reduction.applyReduction(this.orderCommand.price);
+        const price = this.reduction.applyReduction(this.orderCommand.price);
         this.paymentDone = this.paymentBuild.pay(price);
     };
 
     getTickets = () => {
         if (this.paymentDone) {
             if (this.isDesk) {
-                this.getTickets(this.orderCommand.order).buildTickets();
+                new GetTickets(this.orderCommand.order).buildTickets();
             } else {
-                this.getTickets(this.orderCommand.order).buildOnlineTickets();
+                new GetTickets(this.orderCommand.order).buildOnlineTickets();
             }
             this.CommandOrder = new CommandOrder();
             this.reduction = new NullReduction();

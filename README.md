@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# BDPA, on est des PD
-=======
 # BDPA
->>>>>>> 23714a6cb3829c4d726aa19578cd5c59fbee8ad1
 
 ## Zoo cash desk
 Within the zoo, design a cash register information system that allows the zoo to:

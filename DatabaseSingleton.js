@@ -1,15 +1,15 @@
 class Database {
     constructor() {
-        if (Database.instance == null) {
+        if (Database.database == null) {
             this.tickets = [];
             this.peopleOnSite = 0;
-            Database.instance = this;
+            Database.database = this;
         }
-        return Database.instance;
+        return Database.database;
     }
 
     reset() {
-        Database.instance.tickets.length = 0;
+        Database.database.tickets.length = 0;
     }
 
     checkTicket = (ticket) => {
@@ -35,6 +35,6 @@ class Database {
     };
 }
 
-const instance = new Database();
-Object.freeze(instance);
-// module.exports = { database: instance };
+const database = new Database();
+Object.freeze(database);
+// module.exports = { database: database };
