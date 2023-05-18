@@ -1,5 +1,5 @@
 const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory } = require('./payment/PaymentFactory');
+const { PaymentFactory, PaymentType } = require('./payment/PaymentFactory');
 const { NullReduction, Reduction } = require('./payment/Reduction');
 
 class Shop {
@@ -19,8 +19,8 @@ class Shop {
             return;
         }
 
-        this.paymentBuild = new PaymentFactory(type);
-    }
+        this.paymentBuild = new PaymentFactory(PaymentType[type]);
+    };
 
     execPayment = () => {
         if (!this.paymentBuild) return 'No payment type selected';
@@ -28,7 +28,7 @@ class Shop {
 
         const price = reduction.applyReduction(this.orderCommand.price);
         this.paymentDone = this.paymentBuild.pay(price);
-    }
+    };
 
     getTickets = () => {
         if (this.isDesk) {
@@ -36,9 +36,11 @@ class Shop {
         } else {
             this.getTickets().buildOnlineTickets();
         }
-    }
+    };
 
-    createReduction = (reduction) => { this.reduction = new Reduction(reduction) }
+    createReduction = (reduction) => {
+        this.reduction = new Reduction(reduction);
+    };
 }
 
 module.exports = { Shop };
