@@ -22,11 +22,11 @@ test('childOrder', () => {
     commandOrder.execute(childCommand);
     expect(commandOrder.history.length).toBe(1);
     expect(commandOrder.Price).toBe(childCommand.Price);
-    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ childs: 2 }));
+    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ child: 2 }));
     commandOrder.undo();
     expect(commandOrder.history.length).toBe(0);
     expect(commandOrder.Price).toBe(0);
-    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ childs: 0 }));
+    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ child: 0 }));
 });
 
 test('studentOrder', () => {
@@ -52,19 +52,19 @@ test('history', () => {
     commandOrder.execute(c);
     expect(commandOrder.history.length).toBe(3);
     expect(commandOrder.Price).toBe(s.Price + a.Price + c.Price);
-    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ students: 1, adults: 2, childs: 3 }));
+    expect(JSON.stringify(commandOrder.order)).toBe(JSON.stringify({ students: 1, adults: 2, child: 3 }));
     commandOrder.undo();
     expect(commandOrder.history.length).toBe(2);
     expect(commandOrder.Price).toBe(s.Price + a.Price);
     expect(commandOrder.order.students).toBe(1);
     expect(commandOrder.order.adults).toBe(2);
-    expect(commandOrder.order.childs).toBe(0);
+    expect(commandOrder.order.child).toBe(0);
     commandOrder.undo();
     expect(commandOrder.history.length).toBe(1);
     expect(commandOrder.Price).toBe(s.Price);
     expect(commandOrder.order.students).toBe(1);
     expect(commandOrder.order.adults).toBe(0);
-    expect(commandOrder.order.childs).toBe(0);
+    expect(commandOrder.order.child).toBe(0);
     commandOrder.undo();
     commandOrder.undo();
 });

@@ -11,7 +11,20 @@ class Zoo {
         return this.turnstiles[index];
     }
 
-    getOpen
+    getEnterTurnstiles(index) {
+        if (!index) index = 0;
+        return this.turnstiles.find((turnstile) => !turnstile.isOut);
+    }
+
+    getExitTurnstiles(index) {
+        if (!index) index = 0;
+        return this.turnstiles.find((turnstile) => turnstile.isOut);
+    }
+
+    getDesk(index) {
+        if (!index) index = 0;
+        return this.desks[index];
+    }
 }
 
 const zoo = new Zoo();

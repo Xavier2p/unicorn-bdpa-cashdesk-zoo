@@ -5,13 +5,13 @@ class ChildConcreteCommand {
     }
 
     execute(orders) {
-        if (!orders.childs) orders.childs = 0;
-        orders.childs += this.quantity;
+        if (!orders.child) orders.child = 0;
+        orders.child += this.quantity;
     }
 
     undo(orders) {
-        if (!orders.childs) return orders.childs = 0;
-        orders.childs -= this.quantity;
+        if (!orders.child) return orders.child = 0;
+        orders.child -= this.quantity;
     }
 
     get Price() {
