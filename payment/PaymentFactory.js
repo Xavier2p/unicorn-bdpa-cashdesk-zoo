@@ -1,9 +1,3 @@
-class Payment {
-    pay() {
-        return this;
-    }
-}
-
 class PaymentFactory {
     createPayment(paymentType) {
         if (paymentType === "BTC") {
