@@ -17,4 +17,5 @@ class NullReduction {
         return price;
     }
 }
+
 module.exports = { Reduction, NullReduction };
