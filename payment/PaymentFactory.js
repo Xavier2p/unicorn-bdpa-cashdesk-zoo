@@ -1,3 +1,7 @@
+const { BTCPaymentBuilder } = require("./BTCPaymentBuilder");
+const { CardPaymentBuilder } = require("./CardPaymentBuilder");
+const { CashPaymentBuilder } = require("./CashPaymentBuilder");
+
 class PaymentFactory {
     constructor(paymentType) {
         if (paymentType === "BTC") return new BTCPaymentBuilder();
