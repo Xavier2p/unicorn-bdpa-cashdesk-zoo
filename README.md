@@ -31,7 +31,7 @@ Cash register information system also supports:
 
 ## Global Schema
 
-Fot more details, please go to [schema.md](https://github.com/iot-unicorn/cash-desk-zoo/blob/main/SCHEMA.md).
+Fot more details, please go to [SCHEMA.md](https://github.com/Xavier2p/cash-desk-zoo/blob/main/SCHEMA.md).
 
 ```mermaid
 classDiagram
