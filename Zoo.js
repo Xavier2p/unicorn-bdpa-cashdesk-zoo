@@ -1,4 +1,5 @@
 const { database } = require('./DatabaseSingleton');
+const { view } = require('./ViewSingleton');
 const { Shop } = require('./Shop');
 const { Turnstile } = require('./turnstile/Turnstile');
 
