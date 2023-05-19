@@ -1,9 +1,14 @@
+const { AdultConcreteCommand } = require('./order/AdultConcreteCommand');
+const { ChildConcreteCommand } = require('./order/ChildConcreteCommand');
+const { StudentConcreteCommand } = require('./order/StudentConcreteCommand');
 const { Zoo } = require('./Zoo');
 /**
  * Example 1
  */
 function ex1() {
     const zoo = new Zoo();
+    zoo.addTurnstile('enter');
+    zoo.addTurnstile('exit');
     const desk = zoo.getDesk();
 
     // Add two adults
@@ -45,5 +50,39 @@ function ex1() {
 /**
  * Example 2
  */
+function ex2() {
+    const zoo = new Zoo();
+    zoo.addTurnstile('enter');
+    zoo.addTurnstile('exit');
+    const site = zoo.website;
+
+    // Add two adults
+    site.orderCommand.execute(new AdultConcreteCommand(2));
+
+    // Add reduction
+    site.createReduction(20);
+
+    // Set payment method (BTC)
+    site.setPaymentType('BTC');
+
+    // Set payment detail
+    site.paymentBuild.setAddress('10140654');
+
+    // Edge case: cannot get tickets before paying
+    site.getTickets();
+
+    // Pay
+    site.execPayment();
+
+    // Get tickets
+    site.getTickets();
+
+    // Go in zoo
+    zoo.getEnterTurnstiles().enter('previous Id');
+
+    // Exit zoo
+    zoo.getExitTurnstiles().exit();
+}
 
 ex1();
+ex2();

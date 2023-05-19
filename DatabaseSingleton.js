@@ -1,11 +1,11 @@
 class Database {
     constructor() {
-        if (Database.database == null) {
-            this.tickets = [];
-            this.peopleOnSite = 0;
-            Database.database = this;
+        if (Database.database) {
+            return Database.database;
         }
-        return Database.database;
+        Database.database = this;
+        this.tickets = [];
+        this.peopleOnSite = 0;
     }
 
     reset() {
@@ -26,15 +26,14 @@ class Database {
         }
     };
 
-    addPeopleOnSite = () => {
-        database.peopleOnSite++;
-    };
+    addPeopleOnSite() {
+        this.peopleOnSite++;
+    }
 
-    removePeopleOnSite = () => {
-        database.peopleOnSite--;
-    };
+    removePeopleOnSite() {
+        this.peopleOnSite--;
+    }
 }
 
 const database = new Database();
-Object.freeze(database);
 module.exports = { database };

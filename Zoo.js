@@ -43,4 +43,4 @@ class Zoo {
     };
 }
 
-module.exports = { Zoo z};
+module.exports = { Zoo };

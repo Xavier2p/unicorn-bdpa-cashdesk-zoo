@@ -82,8 +82,4 @@ Go in zoo
 
 Exit zoo
 
-<<<<<<< HEAD
 - `zoo.getExitTurnstiles().exit()`
-=======
-- `zoo.getExitTurnstiles().exit()`
->>>>>>> demo

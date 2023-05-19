@@ -1,6 +1,7 @@
 const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory } = require('./payment/PaymentFactory');
+const { PaymentFactory, PaymentType } = require('./payment/PaymentFactory');
 const { NullReduction, Reduction } = require('./payment/Reduction');
+const { GetTickets } = require('./ticket/GetTickets');
 
 class Shop {
     constructor(desk = true) {
