@@ -18,3 +18,14 @@ test('Check Ticket', () => {
     expect(turnstile.enter(ticketTwo.id)).toBe(true);
     expect(turnstile.enter(123)).toBe(false);
 });
+
+test('enter turnstile', () => {
+    let count = 0;
+    const observer = () => {
+        count++;
+    };
+    const turnstile = new Turnstile(false);
+    turnstile.subscribe(observer);
+    turnstile.enter();
+    expect(count).toBe(1);
+});
