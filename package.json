@@ -2,11 +2,11 @@
   "name": "cash-desk-zoo",
   "version": "1.0.0",
   "description": "",
-  "main": "Zoo.js",
+  "main": "flow.js",
   "scripts": {
     "test": "jest",
-    "dev": "nodemon Zoo.js",
-    "start": "node Zoo.js"
+    "dev": "nodemon flow.js",
+    "start": "node flow.js"
   },
   "repository": {
     "type": "git",

@@ -30,17 +30,19 @@ class Shop {
     };
 
     getTickets = () => {
+        let r;
         if (this.paymentDone) {
             if (this.isDesk) {
-                new GetTickets(this.orderCommand.order).buildTickets();
+                r = new GetTickets(this.orderCommand.order).buildTickets();
             } else {
-                new GetTickets(this.orderCommand.order).buildOnlineTickets();
+                r = new GetTickets(this.orderCommand.order).buildOnlineTickets();
             }
             this.CommandOrder = new CommandOrder();
             this.reduction = new NullReduction();
         } else {
             console.log('Payment not done');
         }
+        return r;
     };
 
     createReduction = (reduction) => {

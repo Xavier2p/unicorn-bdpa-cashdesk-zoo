@@ -6,24 +6,31 @@ class GetTickets {
     }
 
     buildTickets() {
+        const tickets = [];
         Object.keys(this.order).forEach((key) => {
             for (let i = 0; i < this.order[key]; i++) {
-                const t = new Ticket(key, makeid(16));
+                let id = makeid(16);
+                const t = new Ticket(key, id);
+                tickets.push(id);
                 t.save();
                 t.print();
             }
         });
+        return tickets;
     }
 
     buildOnlineTickets() {
+        const tickets = [];
         Object.keys(this.order).forEach((key) => {
             for (let i = 0; i < this.order[key]; i++) {
-                const t = new Ticket(key, makeid(16));
-                t.save();
+                let id = makeid(16);
+                const t = new Ticket(key, id);
+                tickets.push(id);
                 t.print();
                 t.notify();
             }
         });
+        return tickets;
     }
 }
 
