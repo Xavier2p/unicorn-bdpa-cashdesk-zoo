@@ -41,7 +41,7 @@ class Shop {
             this.CommandOrder = new CommandOrder();
             this.reduction = new NullReduction();
         } else {
-            console.log('Payment not done');
+            console.error('Payment not done');
         }
         return r;
     };

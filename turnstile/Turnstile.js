@@ -13,6 +13,7 @@ class Turnstile {
             });
             return true;
         }
+        console.error("You need tickets to enter the zoo");
         return false;
     };
 

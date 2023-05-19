@@ -1,3 +1,4 @@
+const { database } = require('./DatabaseSingleton');
 const { AdultConcreteCommand } = require('./order/AdultConcreteCommand');
 const { ChildConcreteCommand } = require('./order/ChildConcreteCommand');
 const { StudentConcreteCommand } = require('./order/StudentConcreteCommand');
@@ -64,6 +65,9 @@ function ex2() {
 
     // Set payment method (BTC)
     site.setPaymentType('BTC');
+    
+    // Edge case: cannot get pay without address
+    site.execPayment();
 
     // Set payment detail
     site.paymentBuild.setAddress('10140654');
@@ -71,18 +75,21 @@ function ex2() {
     // Edge case: cannot get tickets before paying
     site.getTickets();
 
+    // Edge case: cannot enter zoo without tickets
+    zoo.getEnterTurnstiles().enter();
+
     // Pay
     site.execPayment();
 
     // Get tickets
-    site.getTickets();
-
+    let tickets = site.getTickets();
+    console.log(database);
     // Go in zoo
-    zoo.getEnterTurnstiles().enter('previous Id');
+    zoo.getEnterTurnstiles().enter(tickets[0]);
 
     // Exit zoo
     zoo.getExitTurnstiles().exit();
 }
 
-ex1();
+//ex1();
 ex2();
