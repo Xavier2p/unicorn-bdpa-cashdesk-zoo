@@ -27,6 +27,7 @@ class GetTickets {
                 const t = new Ticket(key, id);
                 tickets.push(id);
                 t.print();
+                t.save();
                 t.notify();
             }
         });

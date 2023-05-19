@@ -83,7 +83,7 @@ function ex2() {
 
     // Get tickets
     let tickets = site.getTickets();
-    console.log(database);
+
     // Go in zoo
     zoo.getEnterTurnstiles().enter(tickets[0]);
 
