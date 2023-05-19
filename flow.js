@@ -95,5 +95,7 @@ function ex2() {
     zoo.getExitTurnstiles().exit();
 }
 
-//ex1();
+console.clear()
+ex1();
+console.clear()
 ex2();

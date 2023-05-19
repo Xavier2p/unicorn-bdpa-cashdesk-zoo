@@ -20,7 +20,7 @@ class Ticket {
     };
 
     notify = () => {
-        console.log(`Ticket ${this.id} is ${this.isUsed ? 'used' : 'not used'}`);
+        console.log(`Notification: New Ticket ${this.id} bought online`);
     };
 }
 
