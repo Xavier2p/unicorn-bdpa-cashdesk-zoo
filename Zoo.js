@@ -13,12 +13,12 @@ class Zoo {
 
     getEnterTurnstiles(index) {
         if (!index) index = 0;
-        return this.turnstiles.findAll((turnstile) => !turnstile.isOut)[index];
+        return this.turnstiles.filter((turnstile) => !turnstile.isOut)[index];
     }
 
     getExitTurnstiles(index) {
         if (!index) index = 0;
-        return this.turnstiles.findAll((turnstile) => turnstile.isOut)[index];
+        return this.turnstiles.filter((turnstile) => turnstile.isOut)[index];
     }
 
     getDesk(index) {
@@ -38,5 +38,3 @@ class Zoo {
         }
     }
 }
-
-const zoo = new Zoo();

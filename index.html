@@ -3,18 +3,29 @@
     <head>
         <meta charset="utf-8" />
         <title>Zoo Cash Desk</title>
+        <script src="DatabaseSingleton.js"></script>
+        <script src="payment/Reduction.js"></script>
+        <script src="ticket/Ticket.js"></script>
+        <script src="ticket/GetTickets.js"></script>
+        <script src="turnstile/Turnstile.js"></script>
+        <script src="payment/BTCPaymentBuilder.js"></script>
+        <script src="payment/CardPaymentBuilder.js"></script>
+        <script src="payment/CashPaymentBuilder.js"></script>
+        <script src="payment/PaymentFactory.js"></script>
+        <script src="order/AdultConcreteCommand.js"></script>
+        <script src="order/ChildConcreteCommand.js"></script>
+        <script src="order/StudentConcreteCommand.js"></script>
+        <script src="order/CommandOrder.js"></script>
+        <script src="Shop.js"></script>
         <script src="Zoo.js"></script>
     </head>
     <body>
         <h1>Interactive Mode for Zoo Cash Desk</h1>
     </body>
-<<<<<<< Updated upstream
-=======
 
     <script defer>
         const zoo = new Zoo();
         zoo.addTurnstile('enter');
         zoo.addTurnstile('exit');
     </script>
->>>>>>> Stashed changes
 </html>

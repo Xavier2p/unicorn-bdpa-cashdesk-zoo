@@ -1,7 +1,15 @@
-# do command
-Add two adult
-* ````
+# Demo Flow
+
+## First example
+
+Add two adults
+
+- `zoo.getDesk().orderCommand.execute(new AdultConcreteCommand(2))`
+
 Add one child
+
+- `zoo.getDesk().orderCommand.execute(new ChildConcreteCommand(1))`
+
 Add one student
 
 - `zoo.getDesk().orderCommand.execute(new StudentConcreteCommand(1))`
@@ -74,4 +82,8 @@ Go in zoo
 
 Exit zoo
 
+<<<<<<< HEAD
 - `zoo.getExitTurnstiles().exit()`
+=======
+- `zoo.getExitTurnstiles().exit()`
+>>>>>>> demo

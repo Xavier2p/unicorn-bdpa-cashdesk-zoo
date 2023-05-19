@@ -1,5 +1,6 @@
 const { Turnstile } = require('../turnstile/Turnstile');
 const { Ticket } = require('../ticket/Ticket');
+const { database } = require('../DatabaseSingleton');
 
 test('Create Turnstile', () => {
     const turnstile = new Turnstile();
@@ -25,7 +26,8 @@ test('enter turnstile', () => {
         count++;
     };
     const turnstile = new Turnstile(false);
+    database.tickets.push(new Ticket("adult", "123"))
     turnstile.subscribe(observer);
-    turnstile.enter();
+    turnstile.enter("123");
     expect(count).toBe(1);
 });

@@ -1,5 +1,5 @@
 const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory, PaymentType } = require('./payment/PaymentFactory');
+const { PaymentFactory } = require('./payment/PaymentFactory');
 const { NullReduction, Reduction } = require('./payment/Reduction');
 
 class Shop {
@@ -25,16 +25,16 @@ class Shop {
         if (!this.paymentBuild) return 'No payment type selected';
         if (this.paymentDone) return 'Payment already done';
 
-        const price = reduction.applyReduction(this.orderCommand.price);
+        const price = this.reduction.applyReduction(this.orderCommand.price);
         this.paymentDone = this.paymentBuild.pay(price);
     };
 
     getTickets = () => {
         if (this.paymentDone) {
             if (this.isDesk) {
-                this.getTickets(this.orderCommand.order).buildTickets();
+                new GetTickets(this.orderCommand.order).buildTickets();
             } else {
-                this.getTickets(this.orderCommand.order).buildOnlineTickets();
+                new GetTickets(this.orderCommand.order).buildOnlineTickets();
             }
             this.CommandOrder = new CommandOrder();
             this.reduction = new NullReduction();
