@@ -1,6 +1,6 @@
 class BTCPaymentBuilder {
     constructor() {
-        this.address = ''
+        this.address = ""
     }
 
     setAddress(address) {

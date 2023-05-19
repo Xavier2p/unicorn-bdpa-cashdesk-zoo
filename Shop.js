@@ -1,6 +1,7 @@
 const { CommandOrder } = require('./order/CommandOrder');
-const { PaymentFactory } = require('./payment/PaymentFactory');
+const { PaymentFactory, PaymentType } = require('./payment/PaymentFactory');
 const { NullReduction, Reduction } = require('./payment/Reduction');
+const { GetTickets } = require('./ticket/GetTickets');
 
 class Shop {
     constructor(desk = true) {
@@ -30,17 +31,19 @@ class Shop {
     };
 
     getTickets = () => {
+        let r;
         if (this.paymentDone) {
             if (this.isDesk) {
-                new GetTickets(this.orderCommand.order).buildTickets();
+                r = new GetTickets(this.orderCommand.order).buildTickets();
             } else {
-                new GetTickets(this.orderCommand.order).buildOnlineTickets();
+                r = new GetTickets(this.orderCommand.order).buildOnlineTickets();
             }
             this.CommandOrder = new CommandOrder();
             this.reduction = new NullReduction();
         } else {
-            console.log('Payment not done');
+            console.error('Payment not done');
         }
+        return r;
     };
 
     createReduction = (reduction) => {

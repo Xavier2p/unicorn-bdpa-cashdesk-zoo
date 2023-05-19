@@ -30,12 +30,18 @@ class Zoo {
     addTurnstile = (type) => {
         if (type === 'enter') {
             const t = new Turnstile(false);
-            t.subscribe(() => { database.addPeopleOnSite() });
+            t.subscribe(() => {
+                database.addPeopleOnSite();
+            });
             this.turnstiles.push(t);
         } else if (type === 'exit') {
             const t = new Turnstile(true);
-            t.subscribe(() => { database.removePeopleOnSite() });
+            t.subscribe(() => {
+                database.removePeopleOnSite();
+            });
             this.turnstiles.push(t);
         }
-    }
+    };
 }
+
+module.exports = { Zoo };
