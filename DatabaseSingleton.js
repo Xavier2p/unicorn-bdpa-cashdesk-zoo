@@ -27,11 +27,11 @@ class Database {
     };
 
     addPeopleOnSite = () => {
-        this.peopleOnSite++;
+        database.peopleOnSite++;
     };
 
     removePeopleOnSite = () => {
-        this.peopleOnSite--;
+        database.peopleOnSite--;
     };
 }
 
