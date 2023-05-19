@@ -1,4 +1,5 @@
 const { database } = require('./DatabaseSingleton');
+const { view } = require('./ViewSingleton');
 const { AdultConcreteCommand } = require('./order/AdultConcreteCommand');
 const { ChildConcreteCommand } = require('./order/ChildConcreteCommand');
 const { StudentConcreteCommand } = require('./order/StudentConcreteCommand');

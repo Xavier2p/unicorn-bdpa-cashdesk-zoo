@@ -1,4 +1,4 @@
-const { database } = require('../DatabaseSingleton');
+const { database } = require('./DatabaseSingleton');
 
 class View {
     constructor() {
