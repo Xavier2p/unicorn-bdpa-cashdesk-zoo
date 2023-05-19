@@ -1,5 +1,5 @@
 const { database } = require('./DatabaseSingleton');
-const { view } = require('./ViewSingleton');
+const { view, View } = require('./ViewSingleton');
 const { Shop } = require('./Shop');
 const { Turnstile } = require('./turnstile/Turnstile');
 
@@ -8,6 +8,7 @@ class Zoo {
         this.turnstiles = [];
         this.desks = [new Shop()];
         this.website = new Shop(false);
+        this.view = new View();
     }
 
     getTurnstiles = (index) => this.turnstiles[index];

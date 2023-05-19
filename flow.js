@@ -88,6 +88,9 @@ function ex2() {
     // Go in zoo
     zoo.getEnterTurnstiles().enter(tickets[0]);
 
+    // Info people on site
+    zoo.view.info();
+
     // Exit zoo
     zoo.getExitTurnstiles().exit();
 }
