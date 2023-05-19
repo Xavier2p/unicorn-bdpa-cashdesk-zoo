@@ -3,9 +3,7 @@ class Reduction {
         this.reduction = reduction;
     }
 
-    applyReduction = (price) => {
-        return price - this.reduction;
-    }
+    applyReduction = (price) => price - this.reduction;
 }
 
 class NullReduction {
@@ -13,9 +11,7 @@ class NullReduction {
         this.reduction = 0;
     }
 
-    applyReduction = (price) => {
-        return price;
-    }
+    applyReduction = (price) => price;
 }
 
 module.exports = { Reduction, NullReduction };
